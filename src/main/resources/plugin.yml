@@ -1,0 +1,5 @@
+name: Lasertag
+version: ${project.version}
+main: net.craftions.lasertag.Lasertag
+api-version: 1.16
+authors: [ MCTzOCK ]

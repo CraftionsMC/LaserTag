@@ -16,10 +16,12 @@ public class EventEntityDamage implements Listener {
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent e){
         if(!e.getCause().equals(EntityDamageEvent.DamageCause.PROJECTILE)){
+            e.setDamage(0.0d);
+            e.setCancelled(true);
+        }else {
             Projectile p = (Projectile) e.getDamager();
             Player s = (Player) p.getShooter();
             s.sendMessage(Lasertag.prefix + "Du hast " + e.getEntity().getName() + " getötet!");
-            e.setCancelled(true);
         }
     }
 }

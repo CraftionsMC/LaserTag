@@ -12,6 +12,6 @@ public class EventPlayerRespawn implements Listener {
 
     @EventHandler
     public void onRespawn(PlayerRespawnEvent e){
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spreadplayers 0 0 100 100 false " + e.getPlayer());
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spreadplayers 0 0 40 30 false " + e.getPlayer().getName());
     }
 }

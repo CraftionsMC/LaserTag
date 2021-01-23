@@ -16,12 +16,13 @@ public class EventPlayerJoin implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spreadplayers 0 0 100 100 false " + e.getPlayer());
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spreadplayers 0 0 40 30 false " + e.getPlayer().getName());
         e.getPlayer().setGameMode(GameMode.ADVENTURE);
         e.getPlayer().getInventory().clear();
         ItemStack shoot = new ItemStack(Material.DIAMOND_SWORD);
         ItemMeta meta = shoot.getItemMeta();
         meta.setDisplayName("§e§lGun");
         shoot.setItemMeta(meta);
+        e.getPlayer().getInventory().addItem(shoot);
     }
 }

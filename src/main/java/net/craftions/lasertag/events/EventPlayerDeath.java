@@ -13,5 +13,6 @@ public class EventPlayerDeath implements Listener {
     public void onDeath(PlayerDeathEvent e){
         e.setDroppedExp(0);
         e.setKeepInventory(true);
+        e.getDrops().clear();
     }
 }

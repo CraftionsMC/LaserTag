@@ -27,7 +27,7 @@ public class EventPlayerInteract implements Listener {
                         Arrow a = e.getPlayer().launchProjectile(Arrow.class);
                         a.setShooter(e.getPlayer());
                         a.setGravity(false);
-                        a.setDamage(1000.0);
+                        a.setDamage(3.5);
                         for(Player p : Bukkit.getOnlinePlayers()){
                             ((CraftPlayer) p).getHandle().playerConnection.sendPacket(new PacketPlayOutEntityDestroy(a.getEntityId()));
                         }

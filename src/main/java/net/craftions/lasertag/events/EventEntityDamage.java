@@ -39,6 +39,9 @@ public class EventEntityDamage implements Listener {
                     s.getInventory().addItem(shield);
                 }
             }
+            else{
+                Lasertag.kills.put(s, 1);
+            }
         }
 
     }

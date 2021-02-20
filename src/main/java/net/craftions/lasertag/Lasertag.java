@@ -2,10 +2,13 @@ package net.craftions.lasertag;
 
 import net.craftions.lasertag.events.*;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Lasertag extends JavaPlugin {
+import java.util.HashMap;
 
+public final class Lasertag extends JavaPlugin {
+    public static HashMap<Player, Integer> kills = new HashMap<>();
     public static Lasertag plugin;
     public static String prefix = "[§4LaserTag§r] ";
 

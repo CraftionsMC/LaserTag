@@ -37,6 +37,7 @@ public class EventEntityDamage implements Listener {
                     shield.setItemMeta(meta);
                     shield.setDurability((short) 1);
                     s.getInventory().addItem(shield);
+
                 }
             }
             else{

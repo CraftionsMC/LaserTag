@@ -34,7 +34,7 @@ public class EventPlayerInteract implements Listener {
                         int id = Bukkit.getScheduler().scheduleSyncRepeatingTask(Lasertag.plugin, new Runnable() {
                             @Override
                             public void run() {
-                                a.getLocation().getWorld().spawnParticle(Particle.WATER_BUBBLE, a.getLocation(), 100);
+                                a.getLocation().getWorld().spawnParticle(Particle.WATER_BUBBLE, a.getLocation(), 10);
                             }
                         }, 0L, 1L);
                         Bukkit.getScheduler().scheduleSyncDelayedTask(Lasertag.plugin, new Runnable() {

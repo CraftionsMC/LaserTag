@@ -22,6 +22,7 @@ public final class Lasertag extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new EventPlayerDeath(), this);
         Bukkit.getPluginManager().registerEvents(new EventPlayerRespawn(), this);
         Bukkit.getPluginManager().registerEvents(new EventEntityCollect(), this);
+        Bukkit.getPluginManager().registerEvents(new EventEntityDrop(), this);
         System.out.println("Loaded LaserTag!");
     }
 

@@ -6,6 +6,7 @@ package net.craftions.lasertag.events;
 import net.craftions.lasertag.Lasertag;
 import net.minecraft.server.v1_16_R3.PacketPlayOutEntityDestroy;
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
@@ -22,8 +23,8 @@ public class EventPlayerInteract implements Listener {
     public void onInteract(PlayerInteractEvent e){
         try {
             if (e.getAction().equals(Action.LEFT_CLICK_AIR)) {
-                if(!e.getPlayer().hasCooldown(Material.DIAMOND_SWORD)){
-                    if(e.getItem().getType().equals(Material.DIAMOND_SWORD)){
+                if(!e.getPlayer().hasCooldown(Material.IRON_HOE)){
+                    if(e.getItem().getType().equals(Material.IRON_HOE)){
                         Arrow a = e.getPlayer().launchProjectile(Arrow.class);
                         a.setShooter(e.getPlayer());
                         a.setGravity(false);
@@ -34,7 +35,9 @@ public class EventPlayerInteract implements Listener {
                         int id = Bukkit.getScheduler().scheduleSyncRepeatingTask(Lasertag.plugin, new Runnable() {
                             @Override
                             public void run() {
-                                a.getLocation().getWorld().spawnParticle(Particle.WATER_BUBBLE, a.getLocation(), 10);
+                                Particle.DustOptions dust = new Particle.DustOptions(
+                                        Color.fromRGB((int) 255, (int) 0, (int) 0), 1);
+                                a.getLocation().getWorld().spawnParticle(Particle.REDSTONE, a.getLocation(), 0, 0, 0, 0, dust);
                             }
                         }, 0L, 1L);
                         Bukkit.getScheduler().scheduleSyncDelayedTask(Lasertag.plugin, new Runnable() {
@@ -43,7 +46,7 @@ public class EventPlayerInteract implements Listener {
                                 Bukkit.getScheduler().cancelTask(id);
                                 a.remove();
                             }
-                        }, 3*20L);
+                        }, 2*20L);
                     }
                 }
             }
